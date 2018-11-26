@@ -9,6 +9,11 @@ import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HotelComponent } from './components/hotel/hotel.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -16,10 +21,11 @@ import { SearchComponent } from './components/search/search.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    HotelComponent
   ],
   imports: [
-    BrowserModule, NgSelectModule, FormsModule
+    BrowserModule, NgSelectModule, FormsModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

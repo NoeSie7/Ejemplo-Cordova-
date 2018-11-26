@@ -1,3 +1,10 @@
-<p>
-  search works!
-</p>
+
+  <div id="search"  class="row justify-content-center">
+    <div class="col-lg-12">
+        <ng-select id="selectSearch" [items]="items"
+                [(ngModel)]="selectedSimpleItem" placeholder="Ejemplo: Barcelona">
+        </ng-select>
+    </div>
+    <app-hotel></app-hotel>
+  </div>
+
