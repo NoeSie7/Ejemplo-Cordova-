@@ -11,9 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HotelComponent } from './components/hotel/hotel.component';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +23,7 @@ import { HotelComponent } from './components/hotel/hotel.component';
     HotelComponent
   ],
   imports: [
-    BrowserModule, NgSelectModule, FormsModule, AppRoutingModule
+    BrowserModule, NgSelectModule, FormsModule, AppRoutingModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
