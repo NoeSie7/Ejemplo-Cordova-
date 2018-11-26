@@ -1,9 +1,14 @@
-<div class="card" style="width: 18rem;">
+<div class="card">
+    <img class="card-img-top" src="https://q-ec.bstatic.com/images/hotel/max1280x900/101/101430248.jpg" alt="foto"/>
     <div class="card-body">
-      <h5 class="card-title">Nombre</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Fotaco</h6>
-      <p class="card-text">Direccion.</p>
-      <button class="btn btn-primary">DETALLES</button>
-      <i class="fa fa-star start" aria-hidden="true"></i>
+      <!-- <h6 class="card-subtitle mb-2 text-muted">Fotaco</h6> -->
+      <h5 class="card-title">{{hotel.name}}</h5>
+      <p class="card-text">{{hotel.adress}}</p>
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-primary">DETALLES</button>
+        <article>
+          <i *ngFor="let i of toArray(hotel.score)" class="fa fa-star start" aria-hidden="true"></i>
+        </article>
+      </div>
     </div>
   </div>

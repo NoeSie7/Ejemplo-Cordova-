@@ -1,10 +1,11 @@
-
   <div id="search"  class="row justify-content-center">
     <div class="col-lg-12">
-        <ng-select id="selectSearch" [items]="items"
-                [(ngModel)]="selectedSimpleItem" placeholder="Ejemplo: Barcelona">
+        <ng-select id="selectSearch" [(ngModel)]="selectedSimpleItem" placeholder="Ejemplo: Barcelona" (change)="findHotels()">
+                <ng-option *ngFor="let city of cities" [value]="city.id" >{{city.name}}</ng-option>
         </ng-select>
     </div>
-    <app-hotel></app-hotel>
+    <div class="row m-3 justify-content-between">
+      <app-hotel class=" col-xs-12 col-md-6 col-lg-2 m-2" *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel>
+    </div>
   </div>
 
