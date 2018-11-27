@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HotelComponent} from '../hotel/hotel.component';
+import { HotelComponent } from '../hotel/hotel.component';
 import { ApiService } from 'src/app/services/api.service';
+import { City } from 'src/app/models/city';
+import { Hotel } from 'src/app/models/hotel';
 
 
 @Component({
@@ -8,6 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
+
 export class SearchComponent implements OnInit {
 
   public cities;
@@ -19,19 +22,20 @@ export class SearchComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    // this.cities = [true, 'Two', 3];
-    this.apiService.getProvincias().toPromise().then((res: any[]) => {
-      console.log(res);
-      this.cities = res;
+    this.apiService.getProvincias().toPromise().then((res: City[]) => {
+      this.cities = res
+    }).catch(err => {
+      console.error(err);
+
     });
   }
 
-
   findHotels() {
-    this.apiService.getHoteles(this.selectedSimpleItem).toPromise().then( res => {
-      console.log('hotels', res);
+    this.apiService.getHoteles(this.selectedSimpleItem).toPromise().then((res: Hotel[]) => {
       this.hotels = res;
-    }).catch(err => console.log(err));
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
 }

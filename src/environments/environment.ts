@@ -4,7 +4,12 @@
 
 export const environment = {
   production: false,
-  baseurl: 'http://localhost:8090/api'
+  baseurl: 'http://liferay.plexus.services/api/jsonws',
+  baseurlLocal: 'http://localhost:8090/api',
+  apiCredentials:{
+    username: 'test@liferay.com',
+    password: 'test'
+  }
 };
 
 /*
