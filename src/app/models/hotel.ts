@@ -1,22 +1,37 @@
-export interface hotelResponse{
-  title: string;
-  imgUrl0: string;
-  imgUrl1: string;
+import { environment } from "src/environments/environment";
+
+export interface hotelResponse {
   caracteristica0: string;
   caracteristica1: string;
   caracteristica2: string;
-  precio: number;
-  oferta: number;
-  endField: boolean;
+  categoria0: string;
+  categoria1: string;
+  categoria2: string;
+  categoria3: string;
+  description: string;
+  hotelId: string;
+  oferta: string;
+  precio: string;
+  title: string;
+  urlImage: string;
+  uuid: string;
 }
-export class Hotel{
+
+export class Hotel {
+  img: string;
   name: string;
-  address: string;
+  features: String[];
+  description: string;
+  prize: string;
+  offer: string;
 
   constructor(data:hotelResponse){
+    this.img = environment.domain+data.urlImage;
     this.name = data.title;
-    this.address = data.caracteristica0;
+    this.features = [data.caracteristica0, data.caracteristica1, data.caracteristica2];
+    this.description = data.description;
+    this.prize = data.precio;
+    this.offer = data.oferta;
   }
-
 
 }

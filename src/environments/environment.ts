@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
+  domain: 'http://liferay.plexus.services',
   baseurl: 'http://liferay.plexus.services/api/jsonws',
-  baseurlLocal: 'http://localhost:8090/api',
   apiCredentials:{
     username: 'test@liferay.com',
     password: 'test'

@@ -1,14 +1,17 @@
 <div class="card">
-    <img class="card-img-top" src="https://q-ec.bstatic.com/images/hotel/max1280x900/101/101430248.jpg" alt="foto"/>
+    <img class="card-img-top" :src="{{hotel.img}}" alt="foto"/>
     <div class="card-body">
       <!-- <h6 class="card-subtitle mb-2 text-muted">Fotaco</h6> -->
       <h5 class="card-title">{{hotel.name}}</h5>
-      <p class="card-text">{{hotel.address}}</p>
+      <p *ngFor="let feature of hotel.features" class="card-text">{{feature}}</p>
+      <p class="card-text">{{hotel.description}}</p>
+      <p class="card-text">{{hotel.prize}}</p>
+      <p class="card-text">{{hotel.offer}}</p>
       <div class="d-flex justify-content-between">
         <button class="btn btn-primary">DETALLES</button>
-        <article>
+        <!----<article>
           <i *ngFor="let i of toArray(hotel.score)" class="fa fa-star start" aria-hidden="true"></i>
-        </article>
+        </article>-->
       </div>
     </div>
   </div>

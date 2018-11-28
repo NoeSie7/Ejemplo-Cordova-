@@ -1,4 +1,4 @@
-interface cityResponse{
+interface cityResponse {
   categoryId: string;
   companyId: string;
   createDate: Date;
@@ -18,8 +18,8 @@ interface cityResponse{
   userName: string;
   uuid: string;
 }
-export class City {
-  
+
+export class City {  
   name: string;
   id: string;
   

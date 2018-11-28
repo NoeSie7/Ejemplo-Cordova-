@@ -29,7 +29,8 @@ export class ApiService {
   }
 
   getHoteles(city: number) {
-    return this.http.get(`${environment.baseurlLocal}/hotels/find/${city}`).pipe(
+    return this.http.get(`${environment.baseurl}/poc.hotel/get-hoteles?categoryId=${city}`,
+    this.httpOptions).pipe(
       map((e:any) => e.map(y=> new Hotel(y)))
     );
   }

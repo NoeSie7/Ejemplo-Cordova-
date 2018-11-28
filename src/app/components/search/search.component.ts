@@ -33,6 +33,7 @@ export class SearchComponent implements OnInit {
   findHotels() {
     this.apiService.getHoteles(this.selectedSimpleItem).toPromise().then((res: Hotel[]) => {
       this.hotels = res;
+      //console.log(this.hotels['0'].features['0']);
     }).catch(err => {
       console.log(err);
     });
