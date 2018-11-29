@@ -10,11 +10,13 @@ import { City } from '../models/city';
 })
 export class ApiService {
 
+  lang:string = 'en';
+
   constructor(
     private http: HttpClient
   ) { }
 
-  
+
   private httpOptions = {
     headers: new HttpHeaders({
       'Authorization':`Basic ${btoa(`${environment.apiCredentials.username}:${environment.apiCredentials.password}`)}`
@@ -22,14 +24,14 @@ export class ApiService {
   }
 
   getProvincias() {
-    return this.http.get(`${environment.baseurl}/assetcategory/get-vocabulary-categories-display?groupId=20135&name=&vocabularyId=43625&start=-1&end=-1&-obc=`, 
+    return this.http.get(`${environment.baseurl[this.lang]}/assetcategory/get-vocabulary-categories-display?groupId=20135&name=&vocabularyId=43625&start=-1&end=-1&-obc=`,
     this.httpOptions).pipe(
       map(e => e['categories'].map(y => new City(y)))
     )
   }
 
   getHoteles(city: number) {
-    return this.http.get(`${environment.baseurl}/poc.hotel/get-hoteles?categoryId=${city}`,
+    return this.http.get(`${environment.baseurl[this.lang]}/poc.hotel/get-hoteles?categoryId=${city}`,
     this.httpOptions).pipe(
       map((e:any) => e.map(y=> new Hotel(y)))
     );

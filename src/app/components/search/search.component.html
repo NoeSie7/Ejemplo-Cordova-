@@ -1,6 +1,6 @@
   <div id="search"  class="row justify-content-center">
     <div class="col-lg-12">
-        <ng-select id="selectSearch" [(ngModel)]="selectedSimpleItem" placeholder="Ejemplo: Barcelona" (change)="findHotels()">
+        <ng-select id="selectSearch" [(ngModel)]="selectedSimpleItem" placeholder="{{'views.searchPlaceHolder' | translate}}: Barcelona" (change)="findHotels()">
                 <ng-option *ngFor="let city of cities" [value]="city.id" >{{city.name}}</ng-option>
         </ng-select>
     </div>

@@ -3,7 +3,7 @@ import { HotelComponent } from '../hotel/hotel.component';
 import { ApiService } from 'src/app/services/api.service';
 import { City } from 'src/app/models/city';
 import { Hotel } from 'src/app/models/hotel';
-
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-search',
@@ -14,29 +14,36 @@ import { Hotel } from 'src/app/models/hotel';
 export class SearchComponent implements OnInit {
 
   public cities;
-  selectedSimpleItem: number;
+  selectedSimpleItem: number = null;
   hotels: any;
-
   @ViewChild(HotelComponent) hotel: HotelComponent;
 
-  constructor(private apiService: ApiService) { }
+  constructor(
+    private apiService: ApiService,
+    private translate: TranslateService
+  ) { }
 
   ngOnInit() {
-    this.apiService.getProvincias().toPromise().then((res: City[]) => {
-      this.cities = res
-    }).catch(err => {
-      console.error(err);
-
-    });
+    this.apiService.getProvincias().subscribe(
+      (res: City[]) =>{
+       this.cities = res;
+      },
+      err => {
+        console.error(err);
+      }
+    );
+    this.translate.onLangChange.subscribe(() =>{
+      if(this.selectedSimpleItem){
+        this.findHotels();
+      }
+    })
   }
 
   findHotels() {
-    this.apiService.getHoteles(this.selectedSimpleItem).toPromise().then((res: Hotel[]) => {
-      this.hotels = res;
-      //console.log(this.hotels['0'].features['0']);
-    }).catch(err => {
-      console.log(err);
-    });
+    this.apiService.getHoteles(this.selectedSimpleItem).subscribe(
+      (res: Hotel[]) => this.hotels = res,
+      err => console.error(err)
+    );
   }
 
 }

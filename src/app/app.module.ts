@@ -11,7 +11,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { AppRoutingModule } from './routes/app-routing.module';
 import { HotelComponent } from './components/hotel/hotel.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
+}
 
 @NgModule({
   declarations: [
@@ -23,7 +30,14 @@ import { HttpClientModule } from '@angular/common/http';
     HotelComponent
   ],
   imports: [
-    BrowserModule, NgSelectModule, FormsModule, AppRoutingModule,HttpClientModule
+    BrowserModule, NgSelectModule, FormsModule, AppRoutingModule, HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
