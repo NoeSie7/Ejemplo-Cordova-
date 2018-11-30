@@ -1,0 +1,29 @@
+span{
+  cursor: pointer;
+  transition: .5s;
+}
+
+.unselectedLang{
+  filter: grayscale(100%);
+}
+
+.menu{
+  width: 0;
+  height: 100vh;
+  position: absolute;
+  transition: 1s;
+  opacity: .8;
+  z-index: 10;
+  left: 0;
+}
+
+.expand{
+  width: 75vw;
+}
+
+.menu  > .d-flex{
+  opacity: 0;
+}
+.expand  > .d-flex{
+  opacity: 1;
+}

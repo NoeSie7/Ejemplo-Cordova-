@@ -11,7 +11,8 @@ export class AppComponent {
   title = 'POCBarceloHotelesAngular';
 
   constructor(translate: TranslateService, apiservice: ApiService){
-    translate.setDefaultLang(apiservice.lang);
+    translate.addLangs(['en','es'])
+    //translate.setDefaultLang(apiservice.lang);
     translate.use(apiservice.lang);
   }
 }
