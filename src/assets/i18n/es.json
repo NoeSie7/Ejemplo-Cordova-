@@ -1,5 +1,16 @@
 {
   "views":{
-    "searchPlaceHolder":"Ejemplo"
+    "home":{
+      "welcomeMessage": "Bienvenidos al grupo de Barceló Hoteles",
+      "inputLabel": "Encuentra tu hotel",
+      "placeholder": "Choose your destiny"
+    },
+    "footer":{
+      "legal": "Términos legales",
+      "policy": "Política de privacidad",
+      "info":"Información general",
+      "cookies" : "Configuracion de cookies",
+      "reviews": "Ahora con reseñas de usuarios"
+    }
   }
 }

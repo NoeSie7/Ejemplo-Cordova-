@@ -1,25 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from "@ngx-translate/core";
+import { TranslateService } from '@ngx-translate/core';
 import { ApiService } from 'src/app/services/api.service';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  actualLanguage: string = null;
-  showLanguagesPhone: boolean  = false;
+  actualLanguage = 'en';
+  showLanguagesPhone = false;
 
   constructor(
     private translate: TranslateService,
-    private apiservice: ApiService) {
-      this.actualLanguage = this.apiservice.lang;
-  }
+    private apiservice: ApiService
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   changeLanguage(lang) {
     this.apiservice.lang = lang;
@@ -27,7 +23,7 @@ export class HeaderComponent implements OnInit {
     this.translate.use(lang).subscribe();
   }
 
-  expandLanguage(){
+  expandLanguage() {
     this.showLanguagesPhone = !this.showLanguagesPhone;
   }
 }

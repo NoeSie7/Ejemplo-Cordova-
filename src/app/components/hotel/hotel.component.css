@@ -1,0 +1,15 @@
+.seccion-hoteles .indice {color: #7a7a7a;padding-bottom: 10px;}
+.seccion-hoteles .row {margin: 0}
+.seccion-hoteles .row .col-sm-6, .seccion-hoteles .row .col-md-4, .seccion-hoteles .row .col-lg-3{padding: 5px;}
+ /* Fichas Hoteles */
+.card {height: 100%; border: 0; -webkit-box-shadow: 5px 5px 30px 0px rgba(0, 0, 0); -moz-box-shadow: 5px 5px 30px 0px rgba(0, 0, 0); box-shadow: 5px 5px 30px 0px rgba(0, 0, 0);}
+.card .card-body {min-height: 250px;color:#7a7a7a;font-weight: 300;}
+.card .card-body > h4{font-size: 22px; font-weight: 400;text-align: center;}
+.card .card-body > p {margin-bottom: 5px;}
+.card .card-body .card-text-descripcion{margin-bottom: 20px;}
+.card .card-body .card-text-caracteristicas{font-size:12px;}
+.card .card-body .card-text-caracteristicas::before{content:"\f105";font-family: FontAwesome;font-size: 13px;color:#ccc2aa;}
+.card .card-body .precios{display: flex;padding: 10px 0 20px;}
+.card .card-body .precios .card-text-precio-y-oferta{text-decoration:line-through;font-size: 12px;}
+.card .card-body .precios .card-text-oferta{color:#ff4444; font-size: 20px;font-weight: 400;position: absolute; right: 15px;bottom: 35px;}
+.seccion-hoteles .button-detalles{position: absolute; bottom: 10px;}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService } from "@ngx-translate/core";
+import { TranslateService } from '@ngx-translate/core';
 import { ApiService } from './services/api.service';
 
 @Component({
@@ -10,9 +10,8 @@ import { ApiService } from './services/api.service';
 export class AppComponent {
   title = 'POCBarceloHotelesAngular';
 
-  constructor(translate: TranslateService, apiservice: ApiService){
-    translate.addLangs(['en','es'])
-    //translate.setDefaultLang(apiservice.lang);
+  constructor(translate: TranslateService, apiservice: ApiService) {
+    translate.addLangs(['en', 'es']);
     translate.use(apiservice.lang);
   }
 }

@@ -1,11 +1,19 @@
-  <div id="search"  class="row justify-content-center">
-    <div class="col-lg-12">
-        <ng-select id="selectSearch" [(ngModel)]="selectedSimpleItem" placeholder="{{'views.searchPlaceHolder' | translate}}: Barcelona" (change)="findHotels()">
-                <ng-option *ngFor="let city of cities" [value]="city.id" >{{city.name}}</ng-option>
-        </ng-select>
-    </div>
-    <div class="row m-3 justify-content-between">
-      <app-hotel class=" col-xs-12 col-md-6 col-lg-2 m-2" *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel>
-    </div>
+<div id="search"  class="seccion row justify-content-center">
+  <div class="seccion-content col-lg-12" ng-if="hotel">
+    <div class="content">
+      <div class="tpl-titulo">
+          <!--<p>¡BIENVENIDOS AL GRUPO BARCELÓ HOTELES!</p> -->
+          <p>{{'views.home.welcomeMessage' | translate | uppercase}}</p>
+        </div>
+        <div class="tpl-input">
+          <p>{{'views.home.inputLabel' | translate}}</p>
+          <ng-select class="tpl-select" id="selectSearch" [(ngModel)]="selectedSimpleItem" placeholder="{{'views.home.placeholder' | translate}}" (change)="findHotels()">
+                  <ng-option *ngFor="let city of cities" [value]="city.id" >{{city.name}}</ng-option>
+          </ng-select>
+      </div>
+      </div>
   </div>
-
+  <div class="seccion-hoteles row m-2 justify-content-between" ng-show='hotel'>
+      <app-hotel class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel>
+  </div>
+</div>

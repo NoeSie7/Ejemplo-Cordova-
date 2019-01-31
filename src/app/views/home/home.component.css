@@ -1,8 +1,5 @@
 #body{
   min-height: 100vh;
 }
-app-search {
-  min-height: 100%;
-  background-image: url("../../../assets/img/piscina_barcelo.jpg");
-  background-size: cover;
-}
+
+ 

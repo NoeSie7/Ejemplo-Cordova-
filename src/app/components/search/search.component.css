@@ -1,9 +1,36 @@
-#search {
-  margin-top: 2%;
-}
+/* .container-fluid{margin: 0 !important; padding: 0 !important;}
+.tpl-titulo p{margin: 0 0 0 30px; padding: 10px 0; font-weight: 400; color: #fff;text-shadow: 0px 0px 15px rgba(0,0,0); z-index: 100;}
+.tpl-titulo p:nth-child(1){font-size: 40px; }
+.tpl-titulo p:nth-child(2){font-size: 20px;}
+.col-lg-12{top:30%;}
 
-#selectsearch{
-  background-color: white;
+#selectSearch{
+  background-color: #ffffff75; 
   border-radius: 8px;
-}
+}  */
 
+.ng-select .ng-select-container{background-color: #ffffff75 !important;}
+/* contenido */
+.seccion{margin: 0 !important; padding: 0 !important;background-color: #060606;}
+.seccion-content{position: relative; padding: 0; min-height: 500px;height: calc(100vh - 100px);z-index: 10;background-image:url("../../../assets/img/portada2.jpg");background-position: center;background-size: cover;background-repeat: no-repeat;}
+/* @media (min-width: 547px){ 
+    .seccion-content{height: calc(100vh - 100px);}
+} */
+.seccion-content .sombra{height: 100%; background-color: #0000002b;}
+.seccion-content .content {position: relative; top: 25%;}
+@media (min-width: 601px){
+    .seccion-content .content {position: relative; top: 30%;}
+
+}
+.seccion-content .content .tpl-titulo p{margin: 0 0 0 30px; padding: 10px 0; font-weight: 400; color: #fff;text-shadow: 0px 0px 15px rgba(0,0,0); z-index: 100;}
+.seccion-content .content .tpl-titulo p:nth-child(1){font-size: 30px; }
+/* .seccion-content .content .tpl-titulo p:nth-child(2){font-size: 20px;} */
+@media (min-width: 601px){
+
+}
+.seccion-content .content .tpl-input{background: rgba(0,0,0,.3);margin: 20px auto 0;padding: 10px;width: 70%;min-width: 290px;position: relative;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;}
+.seccion-content .content .tpl-input p{color:#fff; font-size: 20px; text-align: center;}
+.seccion-content .content .tpl-input::before{content:"\f002";font-family: FontAwesome;font-size: 25px;left: 15px; bottom:10px;position: absolute;z-index: 1;}
+.seccion-content .content .tpl-input .tpl-select {border: 0;padding-left: 35px;width: 100%;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;background-color: white;}
+/* .seccion-hoteles{position: relative; padding: 70px 10px 0; min-height: 595px;z-index: 10;background-color: #f0f0f0;} */
+.seccion-hoteles{background-color: #828282;margin: 0 !important;padding: 20px 0;}
